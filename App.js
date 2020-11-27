@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet, Text, Platform, Button } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -15,10 +15,19 @@ import Icon from "./app/components/Icon";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
+import { TextInput } from "react-native-gesture-handler";
+import AppTextInput from "./app/components/AppTextInput";
 
 
 export default function App() {
-  return <ListingsScreen />;
+  const [firstName, setFirstName] = useState('')
+
+  return (
+<Screen>
+  <AppTextInput placeholder='Username' icon="email"/>
+</Screen>
+
+  )
 }
 
 const styles = StyleSheet.create({
