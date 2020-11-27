@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
 import ListItemSeparator from "../components/ListItemSeparator";
 import ListItem from "./../components/ListItem";
-import Screen from './../components/Screen';
+import Screen from "./../components/Screen";
 
-const messages = [
+const initialMessages = [
   {
     id: 1,
     title: "T1",
@@ -20,7 +20,14 @@ const messages = [
   },
 ];
 
-export default function MessagesScreen() {
+export default function MessagesScreen(props) {
+  const [messages, setMessages] = useState(initialMessages);
+  const [refreshing, setRefreshing] = useState(false);
+
+  const handleDelete = (message) => {
+    // delete message from messages array
+    setMessages(messages.filter((m) => m.id !== message.id));
+  };
   return (
     <Screen>
       <FlatList
@@ -28,18 +35,30 @@ export default function MessagesScreen() {
         keyExtractor={(message) => message.id.toString()}
         renderItem={({ item }) => (
           <ListItem
-          renderRightActions={ListItemDeleteAction}
+            renderRightActions={() => (
+              <ListItemDeleteAction onPress={() => handleDelete(item)} />
+            )}
             title={item.title}
             subTitle={item.description}
             image={item.image}
             onPress={() => console.log(`message selected`, item)}
-          />)}
+          />
+        )}
         ItemSeparatorComponent={ListItemSeparator}
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages([
+            {
+              id: 2,
+              title: "T2",
+              description: "D2",
+              image: require("./../assets/andrew.jpg"),
+            },
+          ]);
+        }}
       />
     </Screen>
   );
 }
 
-const styles = StyleSheet.create({
-    
-})
+const styles = StyleSheet.create({});
