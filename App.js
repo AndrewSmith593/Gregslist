@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { View, StyleSheet, Text, Platform, Button } from "react-native";
+import { View, StyleSheet, Text, Platform, Button, Switch } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import ViewImageScreen from "./app/screens/ViewImageScreen";
@@ -15,19 +15,18 @@ import Icon from "./app/components/Icon";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
-import { TextInput } from "react-native-gesture-handler";
 import AppTextInput from "./app/components/AppTextInput";
-
+import AppPicker from "./app/components/AppPicker";
 
 export default function App() {
-  const [firstName, setFirstName] = useState('')
+  const [isNew, setIsNew] = useState(false);
 
   return (
-<Screen>
-  <AppTextInput placeholder='Username' icon="email"/>
-</Screen>
-
-  )
+    <Screen>
+    <AppPicker icon="apps" placeholder="Category" />
+    <AppTextInput icon="email" placeholder="Emailz" />
+    </Screen>
+  );
 }
 
 const styles = StyleSheet.create({
