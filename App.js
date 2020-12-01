@@ -17,22 +17,6 @@ import ListingsScreen from "./app/screens/ListingsScreen";
 import LoginScreen from "./app/screens/LoginScreen";
 
 export default function App() {
-  return <LoginScreen />;
+  return <ListingEditScreen />;
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: "center",
-//     alignItems: "center",
-//   },
-//   text: {
-//     fontFamily: "Courier",
-//     fontStyle: "italic",
-//     fontWeight: "600",
-//     color: "tomato",
-//     textTransform: "capitalize",
-//     textDecorationLine: "line-through",
-//     lineHeight: 30,
-//   },
-// });
