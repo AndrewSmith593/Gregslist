@@ -9,6 +9,7 @@ import {
   SubmitButton,
 } from "../components/forms";
 import Screen from "../components/Screen";
+import CategoryPickerItem from "../components/CategoryPickerItem";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
@@ -18,9 +19,15 @@ const validationSchema = Yup.object().shape({
 });
 
 const categories = [
-  { label: "Furniture", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Camera", value: 3 },
+  { label: "Furniture", value: 1, backgroundColor: "tomato", icon: "apps" },
+  { label: "Cars", value: 2, backgroundColor: "#FAA95E", icon: "cars" },
+  { label: "Cameras", value: 3, backgroundColor: "#FED658", icon: "cameras" },
+  { label: "Games", value: 4, backgroundColor: "#6FD296", icon: "games" },
+  { label: "Clothing", value: 5, backgroundColor: "#65C6C5", icon: "clothing" },
+  { label: "Sports", value: 6, backgroundColor: "#66B0F4", icon: "sports" },
+  { label: "Movies & Music", value: 7, backgroundColor: "#5C8AEF", icon: "moviesAndMusic" },
+  { label: "Books", value: 8, backgroundColor: "#A77DEB", icon: "books" },
+  { label: "Other", value: 9, backgroundColor: "#8697AF", icon: "other" },
 ];
 
 function ListingEditScreen() {
@@ -42,8 +49,16 @@ function ListingEditScreen() {
           maxLength={8}
           name="price"
           placeholder="Price"
+          width={120}
         />
-        <Picker items={categories} name="category" placeholder="Category" />
+        <Picker
+          items={categories}
+          name="category"
+          numberOfColumns={3}
+          placeholder="Category"
+          width="55%"
+          PickerItemComponent={CategoryPickerItem}
+        />
         <FormField
           maxLength={255}
           multiline
