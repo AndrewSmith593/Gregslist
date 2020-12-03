@@ -19,15 +19,15 @@ const validationSchema = Yup.object().shape({
 });
 
 const categories = [
-  { label: "Furniture", value: 1, backgroundColor: "tomato", icon: "apps" },
-  { label: "Cars", value: 2, backgroundColor: "#FAA95E", icon: "cars" },
-  { label: "Cameras", value: 3, backgroundColor: "#FED658", icon: "cameras" },
-  { label: "Games", value: 4, backgroundColor: "#6FD296", icon: "games" },
-  { label: "Clothing", value: 5, backgroundColor: "#65C6C5", icon: "clothing" },
-  { label: "Sports", value: 6, backgroundColor: "#66B0F4", icon: "sports" },
-  { label: "Movies & Music", value: 7, backgroundColor: "#5C8AEF", icon: "moviesAndMusic" },
-  { label: "Books", value: 8, backgroundColor: "#A77DEB", icon: "books" },
-  { label: "Other", value: 9, backgroundColor: "#8697AF", icon: "other" },
+  { label: "Furniture", value: 1, backgroundColor: "tomato", icon: "chair-rolling" },
+  { label: "Cars", value: 2, backgroundColor: "#FAA95E", icon: "car" },
+  { label: "Cameras", value: 3, backgroundColor: "#FED658", icon: "camera" },
+  { label: "Games", value: 4, backgroundColor: "#6FD296", icon: "cards" },
+  { label: "Clothing", value: 5, backgroundColor: "#65C6C5", icon: "tshirt-crew" },
+  { label: "Sports", value: 6, backgroundColor: "#66B0F4", icon: "basketball" },
+  { label: "Movies & Music", value: 7, backgroundColor: "#5C8AEF", icon: "movie-open" },
+  { label: "Books", value: 8, backgroundColor: "#A77DEB", icon: "book-open-page-variant" },
+  { label: "Other", value: 9, backgroundColor: "#8697AF", icon: "shape-outline" },
 ];
 
 function ListingEditScreen() {
