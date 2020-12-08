@@ -7,6 +7,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Screen from "./app/components/Screen";
 import AppNavigator from "./app/navigation/AppNavigator";
+import AccountNavigator from "./app/navigation/AccountNavigator";
 import navigationTheme from "./app/navigation/navigationTheme";
 // import * as ImagePicker from "expo-image-picker";
 // import Screen from "./app/components/Screen";
