@@ -1,3 +1,26 @@
+// import React from "react";
+// import { View, Text } from "react-native";
+// import NetInfo, { useNetInfo } from "@react-native-community/netinfo";
+// import AsyncStorage from "@react-native-async-storage/async-storage";
+
+// export default function App() {
+//   const demo = async () => {
+//     try {
+//       await AsyncStorage.setItem("person", JSON.stringify({ id: 420 }));
+//       const value = await AsyncStorage.getItem("person");
+//       const person = JSON.parse(value);
+//       console.log(person);
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+//   demo();
+
+//   return (
+//     null
+//   );
+// }
+
 import React from "react";
 import { Button, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -9,18 +32,6 @@ import Screen from "./app/components/Screen";
 import AppNavigator from "./app/navigation/AppNavigator";
 import AccountNavigator from "./app/navigation/AccountNavigator";
 import navigationTheme from "./app/navigation/navigationTheme";
-// import * as ImagePicker from "expo-image-picker";
-// import Screen from "./app/components/Screen";
-// import * as Permissions from "expo-permissions";
-// import { Image, Button } from "react-native";
-// import ImageInputList from "./app/components/ImageInputList";
-// import ListingEditScreen from "./app/screens/ListingEditScreen";
-// const Link = () => {
-//   const navigation = useNavigation();
-
-//   return (
-//     );
-//   };
 
 const Tweets = ({ navigation }) => (
   <Screen>
