@@ -12,9 +12,7 @@ import AppText from "./../components/AppText";
 import useApi from "../hooks/useApi";
 
 export default function ListingsScreen({ navigation }) {
-  const getListingsApi = useApi(
-    listingsApi.getListings
-  );
+  const getListingsApi = useApi(listingsApi.getListings);
 
   useEffect(() => {
     getListingsApi.request();
@@ -38,6 +36,7 @@ export default function ListingsScreen({ navigation }) {
             subTitle={"$" + item.price}
             imageUrl={item.images[0].url}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
+            thumbnailUrl={item.images[0].thumbnailUrl}
           />
         )}
       />

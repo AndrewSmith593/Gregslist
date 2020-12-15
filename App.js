@@ -1,101 +1,21 @@
-// import React from "react";
-// import { View, Text } from "react-native";
-// import NetInfo, { useNetInfo } from "@react-native-community/netinfo";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
-
-// export default function App() {
-//   const demo = async () => {
-//     try {
-//       await AsyncStorage.setItem("person", JSON.stringify({ id: 420 }));
-//       const value = await AsyncStorage.getItem("person");
-//       const person = JSON.parse(value);
-//       console.log(person);
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-//   demo();
-
-//   return (
-//     null
-//   );
-// }
-
-import React from "react";
-import { Button, Text } from "react-native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import React, { useState } from "react";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import Screen from "./app/components/Screen";
 import AppNavigator from "./app/navigation/AppNavigator";
-import AccountNavigator from "./app/navigation/AccountNavigator";
+import AuthNavigator from "./app/navigation/AuthNavigator";
 import navigationTheme from "./app/navigation/navigationTheme";
-
-const Tweets = ({ navigation }) => (
-  <Screen>
-    <Text>Tweets</Text>
-    <Button
-      title="ClickIt"
-      onPress={() => navigation.navigate("TweetDetails", { id: 12 })}
-    />
-  </Screen>
-);
-
-const TweetDetails = ({ route }) => (
-  <Screen>
-    <Text>Tweet Details {route.params.id}</Text>
-  </Screen>
-);
-
-const Stack = createStackNavigator();
-
-const StackNavigator = () => (
-  <Stack.Navigator
-    screenOptions={{
-      headerStyle: { backgroundColor: "skyblue" },
-      headerTintColor: "white",
-    }}
-  >
-    <Stack.Screen name="Tweets" component={Tweets} />
-    <Stack.Screen
-      name="TweetDetails"
-      component={TweetDetails}
-      options={{
-        headerStyle: { backgroundColor: "tomato" },
-        headerTintColor: "white",
-        // headerShown: false,
-      }}
-    />
-  </Stack.Navigator>
-);
-
-const Account = () => (
-  <Screen>
-    <Text>AccountDang</Text>
-  </Screen>
-);
-
-const Tab = createBottomTabNavigator();
-const TabNavigator = () => (
-  <Tab.Navigator
-    tabBarOptions={{
-      activeBackgroundColor: "tomato",
-      activeTintColor: "white",
-      inactiveBackgroundColor: "lightgreen",
-      inactiveTintColor: "black",
-    }}
-  >
-    <Tab.Screen name="FeedPoop" component={FeedNavigator} />
-    <Tab.Screen name="PeepeeAccount" component={AccountNavigator} />
-  </Tab.Navigator>
-);
+import OfflineNotice from "./app/components/OfflineNotice";
+import AuthContext from "./app/auth/context";
 
 export default function App() {
+const [user, setUser] = useState();
+
   return (
-    <NavigationContainer theme={navigationTheme}>
-      <AppNavigator />
-    </NavigationContainer>
+    <AuthContext.Provider value={{user, setUser}}>
+      <OfflineNotice />
+      <NavigationContainer theme={navigationTheme}>
+        {user ? <AppNavigator /> : <AuthNavigator />}
+      </NavigationContainer>
+    </AuthContext.Provider>
   );
 }
