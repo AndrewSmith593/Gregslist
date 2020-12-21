@@ -8,8 +8,8 @@ import authApi from "../api/auth";
 import useAuth from "../auth/useAuth";
 import {
   ErrorMessage,
-  AppForm,
-  AppFormField,
+  AppForm as Form,
+  AppFormField as FormField,
   SubmitButton,
 } from "../components/forms";
 import useApi from "../hooks/useApi";
