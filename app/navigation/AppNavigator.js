@@ -10,7 +10,7 @@ import ListingEditScreen from "../screens/ListingEditScreen";
 import AccountNavigator from "./AccountNavigator";
 import NewListingButton from "./NewListingButton";
 import expoPushTokensApi from "../api/expoPushTokens";
-import navigation from "./app/navigation/rootNavigation";
+import navigation from "./rootNavigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,7 +18,8 @@ const AppNavigator = () => {
   useEffect(() => {
     registerForPushNotifications();
 
-    Notifications.addListener((notification) => {
+    Notifications.addNotificationResponseReceivedListener((notification) => {
+      console.log(notification)
       navigation.navigate("Account");
     });
   }, []);
@@ -29,6 +30,7 @@ const AppNavigator = () => {
       if (!permission.granted) return;
 
       const token = await Notifications.getExpoPushTokenAsync();
+      console.log(token)
       expoPushTokensApi.register(token);
     } catch (error) {
       console.log("Error getting a push token", error);
