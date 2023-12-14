@@ -55,15 +55,15 @@ Not yet deployed.
   ## <a id='Credits' style='color:white;'>Credits</a>
   Andrew Smith
 
-  GitHub Username: AndrewCodesDontYaKnow <br>Github Profile: <a href='https://github.com/AndrewCodesDontYaKnow'>https://github.com/AndrewCodesDontYaKnow</a>
+  GitHub Username: AndrewCodesDontYaKnow <br>Github Profile: <a href='https://github.com/AndrewSmith593'>https://github.com/AndrewCodesDontYaKnow</a>
 
   
   ## <a id='Questions' style='color:white;'>Questions</a>
-  Contact Andrew Smith with questions at andrewsmith593@gmail.com.
+  Contact Andrew Smith with questions.
 
-  GitHub Username: AndrewCodesDontYaKnow
+  GitHub Username: AndrewSmith593
 
-  Github Profile: <a href='https://github.com/andrewcodesdontyaknow'>https://github.com/andrewcodesdontyaknow</a>
+  Github Profile: <a href='https://github.com/AndrewSmith593'>https://github.com/AndrewSmith593</a>
   
 
   <!-- Email: andrewsmith593@gmail.com -->
